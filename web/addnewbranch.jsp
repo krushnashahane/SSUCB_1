@@ -1,3 +1,5 @@
+<%@page import="ssucb.pojo.CityPojo"%>
+<%@page import="java.util.*" %>
 <html>
     <head>
         <link rel="stylesheet" href="css/inputcss.css">
@@ -5,154 +7,245 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
         <script type="text/javascript" src="js/Validation/jquery.validate.min.js"></script>
+        <jsp:useBean id="CityDao" class="ssucb.dao.CityDao"></jsp:useBean>
+        <jsp:useBean id="ct" class="ssucb.pojo.CityPojo"></jsp:useBean>
 
-        <style>
-            /*body {
-                background-color: #C6F5F2;
-            }
-            */
-            #content { background-color:#C6F5F2; width:950px; min-height:550px; text-align:left; padding:20px;  }
-            h1 {
-                padding:20px 10px 20px 10px;
-            }
-            h2 {
-                padding-left: 0px !important;
-            }
-            #header {
-                background-color: #CA410B !important;
-            }
-            .large { font-size:22px; }
-            .orange { color:orange; }
-            .italic { font-style:italic }
-            .textmiddle {vertical-align:middle;}
-            .padout { padding-left:25px; padding-right:25px; }
-            .rounded-corners {
-                -moz-border-radius: 40px;
-                -webkit-border-radius: 40px;
-                -khtml-border-radius: 40px;
-                border-radius: 40px;
-            }
-            .rounded-corners-top {
-                -moz-border-top-radius: 40px;
-                -webkit-border-radius: 40px;
-                -khtml-border-radius: 40px;
-                border-radius: 40px;
-            }
-            .right {
-                float: right;
-            }
-            .scrolldown { padding-left:20px; color:#EDECE8; font-size:40px; font-weight:bold; vertical-align:middle;
-                          text-shadow: #6374AB 2px 2px 2px;
-            }
-            .contentblock { margin: 0px 20px; }
-            .results { border: 1px solid blue; padding:20px; margin-top:20px; min-height:50px; }
-            .blue-bold { font-size:18px; font-weight:bold; color:blue; }
-
-            /* example styles for validation form demo *//*
-           #register-form {
-               background: url("form-fieldset.gif") repeat-x scroll left bottom #F8FDEF;
-               border: 1px solid #DFDCDC;
-               border-radius: 15px 15px 15px 15px;
-               display: inline-block;
-               margin-bottom: 30px;
-               margin-left: 20px;
-               margin-top: 10px;
-               padding: 25px 50px 10px;
-               width: 350px;
-           }
-            */
-            /*
-            #register-form .fieldgroup {
-                background: url("form-divider.gif") repeat-x scroll left top transparent;
-                display: inline-block;
-                padding: 8px 10px;
-                width: 340px;
-            }
-            
-            #register-form .fieldgroup label {
-                float: left;
-                padding: 15px 0 0;
-                text-align: right;
-                width: 110px;
-            }
-            
-            #register-form .fieldgroup input, #register-form .fieldgroup textarea, #register-form .fieldgroup select {
-                float: right;
-                margin: 10px 0;
-                height: 25px;
-            }
-            
-            #register-form .submit {
-                padding: 10px;
-                width: 220px;
-                height: 40px !important;
-            }
-            */
-            #register-form .fieldgroup label.error {
-                color: #FB3A3A;
-                display: inline-block;
-                margin: 4px 0 5px 125px;
-                padding: 0;
-                text-align: left;
-                width: 220px;
-            }
-        </style>
-
-
-
-        <script>
-            function showBankDetail(str) {
-                var xhttp;
-                if (str == "") {
-                    document.getElementById("txtHint").innerHTML = "";
-                    return;
+            <style>
+                /*body {
+                    background-color: #C6F5F2;
                 }
-                xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = function () {
-                    if (this.readyState == 4 && this.status == 200) {
-                        document.getElementById("txtHint").innerHTML = this.responseText;
+                */
+                #content { background-color:#C6F5F2; width:950px; min-height:550px; text-align:left; padding:20px;  }
+                h1 {
+                    padding:20px 10px 20px 10px;
+                }
+                h2 {
+                    padding-left: 0px !important;
+                }
+                #header {
+                    background-color: #CA410B !important;
+                }
+                .large { font-size:22px; }
+                .orange { color:orange; }
+                .italic { font-style:italic }
+                .textmiddle {vertical-align:middle;}
+                .padout { padding-left:25px; padding-right:25px; }
+                .rounded-corners {
+                    -moz-border-radius: 40px;
+                    -webkit-border-radius: 40px;
+                    -khtml-border-radius: 40px;
+                    border-radius: 40px;
+                }
+                .rounded-corners-top {
+                    -moz-border-top-radius: 40px;
+                    -webkit-border-radius: 40px;
+                    -khtml-border-radius: 40px;
+                    border-radius: 40px;
+                }
+                .right {
+                    float: right;
+                }
+                .scrolldown { padding-left:20px; color:#EDECE8; font-size:40px; font-weight:bold; vertical-align:middle;
+                              text-shadow: #6374AB 2px 2px 2px;
+                }
+                .contentblock { margin: 0px 20px; }
+                .results { border: 1px solid blue; padding:20px; margin-top:20px; min-height:50px; }
+                .blue-bold { font-size:18px; font-weight:bold; color:blue; }
+
+                /* example styles for validation form demo *//*
+               #register-form {
+                   background: url("form-fieldset.gif") repeat-x scroll left bottom #F8FDEF;
+                   border: 1px solid #DFDCDC;
+                   border-radius: 15px 15px 15px 15px;
+                   display: inline-block;
+                   margin-bottom: 30px;
+                   margin-left: 20px;
+                   margin-top: 10px;
+                   padding: 25px 50px 10px;
+                   width: 350px;
+               }
+                */
+                /*
+                #register-form .fieldgroup {
+                    background: url("form-divider.gif") repeat-x scroll left top transparent;
+                    display: inline-block;
+                    padding: 8px 10px;
+                    width: 340px;
+                }
+                
+                #register-form .fieldgroup label {
+                    float: left;
+                    padding: 15px 0 0;
+                    text-align: right;
+                    width: 110px;
+                }
+                
+                #register-form .fieldgroup input, #register-form .fieldgroup textarea, #register-form .fieldgroup select {
+                    float: right;
+                    margin: 10px 0;
+                    height: 25px;
+                }
+                
+                #register-form .submit {
+                    padding: 10px;
+                    width: 220px;
+                    height: 40px !important;
+                }
+                */
+                #register-form .fieldgroup label.error {
+                    color: #FB3A3A;
+                    display: inline-block;
+                    margin: 4px 0 5px 125px;
+                    padding: 0;
+                    text-align: left;
+                    width: 220px;
+                }
+            </style>
+
+
+
+            <script>
+                function showBankDetail(str) {
+                    var xhttp;
+                    if (str == "") {
+                        document.getElementById("txtHint").innerHTML = "";
+                        return;
                     }
-                };
-                xhttp.open("GET", "getBankDetail.jsp?searchText=" + str, true);
-                xhttp.send();
-            }
-        </script>
-
-
-        <script type="text/javascript">
-            function check(value) {
-                xmlHttp = GetXmlHttpObject()
-                var url = "checkajax.jsp";
-                url = url + "?name=" + value;
-                xmlHttp.onreadystatechange = stateChanged
-                xmlHttp.open("GET", url, true)
-                xmlHttp.send(null)
-            }
-            function stateChanged() {
-                if (xmlHttp.readyState == 4 || xmlHttp.readyState == "complete") {
-                    var showdata = xmlHttp.responseText;
-                    document.getElementById("mydiv").innerHTML = showdata;
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            document.getElementById("txtHint").innerHTML = this.responseText;
+                        }
+                    };
+                    xhttp.open("GET", "getBankDetail.jsp?searchText=" + str, true);
+                    xhttp.send();
                 }
-            }
-            function GetXmlHttpObject() {
-                var xmlHttp = null;
-                try {
-                    xmlHttp = new XMLHttpRequest();
-                } catch (e) {
+            </script>
+
+
+            <script type="text/javascript">
+                function check(value) {
+                    xmlHttp = GetXmlHttpObject()
+                    var url = "checkajax.jsp";
+                    url = url + "?name=" + value;
+                    xmlHttp.onreadystatechange = stateChanged
+                    xmlHttp.open("GET", url, true)
+                    xmlHttp.send(null)
+                }
+                function stateChanged() {
+                    if (xmlHttp.readyState == 4 || xmlHttp.readyState == "complete") {
+                        var showdata = xmlHttp.responseText;
+                        document.getElementById("mydiv").innerHTML = showdata;
+                    }
+                }
+                function GetXmlHttpObject() {
+                    var xmlHttp = null;
                     try {
-                        xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+                        xmlHttp = new XMLHttpRequest();
                     } catch (e) {
+                        try {
+                            xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+                        } catch (e) {
+                            xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+                        }
+                    }
+                    return xmlHttp;
+                }
+            </script>
+
+
+
+            <script language="javascript" type="text/javascript">
+
+                var xmlHttp
+                var xmlHttp
+                function showState(str) {
+                    // alert(str);
+                    if (typeof XMLHttpRequest != "undefined") {
+
+                        xmlHttp = new XMLHttpRequest();
+
+                    } else if (window.ActiveXObject) {
+
                         xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+
+                    }
+                    if (xmlHttp == null) {
+
+                        alert("Browser does not support XMLHTTP Request")
+
+                        return;
+                    }
+
+                    var url = "viewDistrict.jsp";
+
+                    url += "?count=" + str;
+
+                    xmlHttp.onreadystatechange = stateChange;
+
+                    xmlHttp.open("GET", url, true);
+
+                    xmlHttp.send(null);
+
+                }
+
+                function stateChange() {
+
+                    if (xmlHttp.readyState == 4 || xmlHttp.readyState == "complete") {
+
+                        document.getElementById("district").innerHTML = xmlHttp.responseText
+
                     }
                 }
-                return xmlHttp;
-            }
-        </script>
-    </head>
-    <body>
+
+                function showCity(str) {
+
+                    if (typeof XMLHttpRequest != "undefined") {
+
+                        xmlHttp = new XMLHttpRequest();
+
+                    } else if (window.ActiveXObject) {
+
+                        xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+
+                    }
+                    if (xmlHttp == null) {
+
+                        alert("Browser does not support XMLHTTP Request")
+
+                        return;
+                    }
+
+                    var url = "viewvillage.jsp";
+
+                    url += "?count=" + str;
+
+                    xmlHttp.onreadystatechange = stateChange1;
+
+                    xmlHttp.open("GET", url, true);
+
+                    xmlHttp.send(null);
+
+                }
+                function stateChange1() {
+
+                    if (xmlHttp.readyState == 4 || xmlHttp.readyState == "complete") {
+
+                        document.getElementById("taluka").innerHTML = xmlHttp.responseText
+
+                    }
+                }
+            </script>  
+
+
+
+
+
+        </head>
+        <body>
         <jsp:include page="adminmaster.jsp"/>
         <%!        String username;
-        %>
+                                                                    %>
         <%
             try {
                 username = session.getAttribute("username").toString();
@@ -195,27 +288,60 @@
                         ATM: <div class="item form-group"><select name="atm"><option>YES</option>
                                 <option>NO</option>
                             </select></div>
-
-
-
                         <div class="item form-group"><select name="state" required="required"><option>Maharastra</option>
 
                             </select></div>
+                        City:  <div class="item form-group">
 
-                        District: <div class="item form-group"><select required="required" name="district">
-                                <option>Parbhani</option>
+                            <select name="city"required="required" onchange="showState(this.value);">
+                                <%
+                                    ArrayList<CityPojo> city = CityDao.GetAllCity();
+                                    Iterator cityir = city.iterator();
+                                    while (cityir.hasNext()) {
+                                        ct = (CityPojo) cityir.next();
+                                %>
 
-                            </select></div>
+
+                                <option value="<%=ct.getCityid()%>"><%=ct.getCity()%></option>
+
+
+                                <%
+
+                                    }
+
+
+                                %>
+                            </select>
 
 
 
+                        </div>
 
-                        Taluka <div class="item form-group"><select name="taluka">
-                                <option>Taluka</option>
 
-                            </select></div>
 
-                        <div class="item form-group"><input type="text" required="required" name="city" value="" placeholder="Enter City  Name"/></div>
+                        District:<div id='district'> <div class="item form-group">
+                            <select required="required" name="district" >
+                              
+
+                            </select>
+                            </div></div>
+
+
+                        Taluka<div id='taluka'>  
+
+                            <select name='taluka' >  
+
+                                <option value='-1'>Select</option>  
+
+                            </select>  
+                        </div> 
+
+                        <!-- Taluka <div class="item form-group"><select name="taluka">
+                                 <option>Taluka</option>
+ 
+                             </select></div>-->
+
+
 
 
 
@@ -234,8 +360,7 @@
 
             <div id="view" class="tabcontent">
 
-                <%
-                    try {
+                <%                    try {
                         java.sql.ResultSet rs = ssucb.dao.DBDAO.getInstance().getAllBranches();
                 %>
                 <table class="tftable" id="tblData3" border="1">
@@ -291,26 +416,6 @@
                 <br><br>
                 <div id="txtHint"></div>
 
-            </div>
-
-        </div>
-    </div>
-    <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Location</h4>
-                </div>
-                <div class="modal-body">
-
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3758.2534884160086!2d76.67992201435874!3d19.616457686780098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd06fa1f0baf81d%3A0xe7dafb17027c2bd0!2sSundarlal+Sawji+Urban+Co-Op+Bank%2CHead+Office%2CJintur!5e0!3m2!1sen!2sin!4v1493816457914" width="770" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
             </div>
 
         </div>

@@ -63,6 +63,13 @@ public class CustomerDAO extends ConnectionInitializer {
     return rs;
     }
     
+    
+    
+    
+    
+    
+    
+    
     public boolean CheckCustomer(String email,String pword) throws Exception{
     stmt=conn.prepareStatement("select * from customermaster where email=? and contact=?");
     stmt.setString(1, email);
@@ -95,6 +102,6 @@ return false;
     
     
     }
-    
+ 
     
 }

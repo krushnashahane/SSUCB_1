@@ -81,9 +81,22 @@
                     }
                 %>
                 <ul class='nav'>
+                    
+                      <li>
+
+                          <a href='City.jsp'>City</a>
+                    </li>
+                     <li>
+
+                         <a href='Distict.jsp'>District</a>
+                    </li>
+                      <li>
+
+                          <a href='Village.jsp'>Village</a>
+                    </li>
                     <li>
 
-                        <a href='addnewbranch.jsp''>Branch Master</a>
+                        <a href='addnewbranch.jsp'>Branch Master</a>
                     </li>
                     <li>
                         <a href="managermaster.jsp">Manager Master</a>

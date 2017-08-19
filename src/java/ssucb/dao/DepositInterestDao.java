@@ -134,12 +134,93 @@ return al;
 }
 
 
+public ArrayList<DepositInterestType> getDepositInterestTypeDetailsByid(int id) throws Exception{
+ArrayList<DepositInterestType> al= new ArrayList<DepositInterestType>();
+DepositInterestType dt;
+stmt=conn.prepareStatement("select * from depositinteresttype");
+rs=stmt.executeQuery();
+while(rs.next()){
+dt= new DepositInterestType();
+dt.setDtid(rs.getInt(1));
+dt.setType(rs.getString(2));
+al.add(dt);
+}
 
 
 
+
+return al;
+}
+
+
+
+
+public DepositInterestType getDetailsByID(int id) throws Exception{
+
+DepositInterestType dt=null;
+stmt=conn.prepareStatement("select * from depositinteresttype where dtid='"+id+"'");
+rs=stmt.executeQuery();
+while(rs.next()){
+dt= new DepositInterestType();
+dt.setDtid(rs.getInt(1));
+dt.setType(rs.getString(2));
+}
+return dt;
+}
+
+public boolean UpdateDepositInterestType(DepositInterestType dt) throws Exception{
+stmt=conn.prepareStatement("update depositinteresttype set type=? where dtid=?");
+stmt.setString(1,dt.getType());
+stmt.setInt(2, dt.getDtid());
+int value=stmt.executeUpdate();
+if(value>0){
+return true;
+}else{
+
+return false;
+}
+}
+public boolean DeleteDepositInterestType(int id) throws Exception{
+stmt=conn.prepareStatement("delete from depositinteresttype where dtid=?");
+stmt.setInt(1,id);
+int value=stmt.executeUpdate();
+
+if(value>0){
+
+return true;
+}
+else {
+
+return false;
+}
 
 
 
 
 
 }
+public boolean UpdateDepositInterest(DepositInterest d) throws Exception{
+stmt=conn.prepareStatement("update deposit_interest set particulars=?,credit_society_bank=?,genaral=?,senior_citizen_handicapped=? where did=?");
+stmt.setString(1, d.getPerticulars());
+stmt.setString(2, d.getCredit());
+stmt.setString(3, d.getGeneral());
+stmt.setString(4, d.getSeniorcitizen());
+stmt.setInt(5,d.getDid());
+
+int value=stmt.executeUpdate();
+if(value>0){
+
+return true;
+}else 
+    
+    
+    return false;
+
+}
+
+
+
+}
+
+
+

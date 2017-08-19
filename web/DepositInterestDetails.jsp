@@ -179,7 +179,7 @@
                         <td align="center"><%=d.getGeneral()%></td>
                         <td align="center"><%=d.getSeniorcitizen()%></td>
 
-                        <td align="center"><a href='branchupdatedetail.jsp?bid='>Update</a></td>
+                        <td align="center"><a href='DepositInterestUpdateDetails.jsp?id=<%=d.getDid()%>'>Update</a></td>
                         <td align="center"><a href='branchdelete.jsp?branchid='>Delete</a></td>
 
 

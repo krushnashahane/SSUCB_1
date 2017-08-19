@@ -14,40 +14,32 @@
         <jsp:useBean id="CustomerDB" class="ssucb.dao.CustomerDAO"/>
     </head>
     <body>
-       <%
-       
+        <%
 
-try{
+            try {
 
-String email=request.getParameter("email");
-String pword=request.getParameter("pword");
+                String email = request.getParameter("email");
+                String pword = request.getParameter("pword");
 
+                boolean b = CustomerDB.CheckCustomer(email, pword);
+ //session.setAttribute("cid", rs.getInt(1));
+                if (b) {
+                    ResultSet rs = CustomerDB.GetAllCustomers(email, pword);
+                    while (rs.next()) {
+                        session.setAttribute("cid", rs.getInt(1));
+                        System.out.println("Cid===" + rs.getInt(1));
+                        response.sendRedirect("CustomerMasterHeader.jsp");
+                    }
+                } else {
+                    response.sendRedirect("existingcustomerlogin.jsp");
 
-boolean b=CustomerDB.CheckCustomer(email, pword);
-//session.setAttribute("cid", rs.getInt(1));
-if(b){
-    ResultSet rs=CustomerDB.GetAllCustomers(email, pword);
-    while(rs.next()){
-    session.setAttribute("cid", rs.getInt(1));
-    System.out.println("Cid==="+rs.getInt(1));
-    }
-    
-response.sendRedirect("CustomerMasterHeader.jsp");
-   }else{
-   response.sendRedirect("customerregister.jsp");
-   
-   }
+                }
 
-}catch(Exception e){
-
-System.out.println("Error is "+e);
-
-}
+            } catch (Exception e) {
+                response.sendRedirect("existingcustomerlogin.jsp");
+            }
 
 
-
-
-
-%>
+        %>
     </body>
 </html>
