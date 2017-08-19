@@ -5,7 +5,7 @@
 <head><meta http-equiv="Content-Type" content="text/html; charset=euc-jp">
         <!-- Basic -->
         
-        <title>Sundarlal Sawji Urban Co-op Bank Ltd, Jintur </title>
+        <title>Sundarlal Sawji Urban Co-op Bank Ltd, Jintur</title>
         <meta name="keywords" content="HTML5 Template" />
         <meta name="description" content="CoopBank - Responsive HTML5 Template">
         <meta name="author" content="iwthemes.com">  

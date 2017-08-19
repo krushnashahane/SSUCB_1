@@ -217,7 +217,18 @@ return true;
     return false;
 
 }
+public boolean DeleteDepositInterest( int did) throws Exception{
 
+stmt=conn.prepareStatement("delete from deposit_interest where did=?");
+stmt.setInt(1,did);
+int vale=stmt.executeUpdate();
+if(vale>0) return true;
+else  return false;
+
+
+
+
+}
 
 
 }
