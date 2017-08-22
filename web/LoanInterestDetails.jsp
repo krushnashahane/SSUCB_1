@@ -171,8 +171,8 @@
                         <td align="center"><%=d.getRoi()%></td>  
 
 
-                        <td align="center"><a href='branchupdatedetail.jsp?bid='>Update</a></td>
-                        <td align="center"><a href='branchdelete.jsp?branchid='>Delete</a></td>
+                        <td align="center"><a href='LoanInnterestUpdateDetails.jsp?id=<%=d.getLid()%>'>Update</a></td>
+                        <td align="center"><a href='DeletLoanInterest.jsp?id=<%=d.getLid()%>'>Delete</a></td>
 
 
                     </tr>          

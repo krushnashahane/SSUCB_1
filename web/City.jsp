@@ -138,10 +138,10 @@ Iterator ir=al.iterator();
                     <tr><th>City ID</th>
                         <th>City </th>
                   
-                       
+                 <!--      
                         <th>Update </th>
                         <th>Delete</th>
-
+-->
 
                     </tr>    
                     <%
@@ -152,10 +152,10 @@ Iterator ir=al.iterator();
                     <tr>
                         <td align="center"><%=d.getCityid()%></td>
                         <td align="center"><%=d.getCity()%></td>
-                       
+                      <!-- 
                         <td align="center"><a href='branchupdatedetail.jsp?bid='>Update</a></td>
                         <td align="center"><a href='branchdelete.jsp?branchid='>Delete</a></td>
-
+-->
 
                     </tr>          
                     <%

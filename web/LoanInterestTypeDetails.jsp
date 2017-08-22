@@ -139,8 +139,8 @@
                         <td align="center"><%=d.getLitid()%></td>
                         <td align="center"><%=d.getType()%></td>
 
-                        <td align="center"><a href='branchupdatedetail.jsp?bid='>Update</a></td>
-                        <td align="center"><a href='branchdelete.jsp?branchid='>Delete</a></td>
+                        <td align="center"><a href='LoanInterestTypeUpdate.jsp?id=<%=d.getLitid()%>'>Update</a></td>
+                        <td align="center"><a href='DeleteLoanInterestType.jsp?id=<%=d.getLitid()%>'>Delete</a></td>
 
 
                     </tr>          

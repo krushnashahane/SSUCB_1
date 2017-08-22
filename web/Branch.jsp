@@ -131,7 +131,7 @@ out.println(e);
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <a href="Branch.jsp"><button type="button" class="close" data-dismiss="modal">&times;</button></a>
           <h4 class="modal-title">Location</h4>
         </div>
            
@@ -140,7 +140,7 @@ out.println(e);
       <!--    <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3758.2534884160086!2d76.67992201435874!3d19.616457686780098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd06fa1f0baf81d%3A0xe7dafb17027c2bd0!2sSundarlal+Sawji+Urban+Co-Op+Bank%2CHead+Office%2CJintur!5e0!3m2!1sen!2sin!4v1493816457914" width="770" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
        --> </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <a href="Branch.jsp"><button  type="button" class="btn btn-default" data-dismiss="modal">Close</button></a>
         </div>
       </div>
       
