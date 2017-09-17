@@ -10,6 +10,7 @@
         <jsp:useBean id="CityDao" class="ssucb.dao.CityDao"></jsp:useBean>
         
         
+        <jsp:useBean id="ServiceCharges" class="ssucb.dao.ServiceChargesDao"></jsp:useBean>
         <script>
             function showBankDetail(str) {
                 var xhttp;    
@@ -64,6 +65,7 @@ return xmlHttp;
     <body>
         <jsp:include page="adminmaster.jsp"/>
         <%!        String username;
+        ssucb.pojo.ServiceCharges s;
         %>
         <%
             try {
@@ -72,6 +74,11 @@ return xmlHttp;
                 response.sendRedirect("adminlogin.jsp");
                 
                 }
+                int sid=Integer.parseInt(request.getParameter("sid"));
+                
+                
+                s=ServiceCharges.GetServiceChargesBYId(sid);
+                
             } catch (Exception e) {
 
                 response.sendRedirect("adminlogin.jsp");
@@ -82,25 +89,26 @@ return xmlHttp;
             <a class='button'></a>
 
             <div class="tab">
-                <button class="tablinks" onclick="openCity(event, 'addbranch')">Add New City</button>
-                <button class="tablinks" onclick="openCity(event, 'view')">View City</button>
+                <button class="tablinks" onclick="openCity(event, 'addbranch')">Service Charges</button>
+                
                <!-- <button class="tablinks" onclick="openCity(event, 'search')">Search Branches</button>-->
             </div>
 
             <div id="addbranch" class="tabcontent">
-                <h3>Add City</h3>
+              
                 <br><br>
                     
-                    <form  action="Addcity.jsp" class="form-horizontal form-label-left" method="POST" novalidate>
+                    <form  action="ServiceChargesUpdate.jsp" class="form-horizontal form-label-left" method="POST" novalidate>
                           <div class="item form-group">
-                         <input type="text" name="city" id="name" data-validate-length-range="4" data-validate-words="1" value=""  placeholder="Add City" required="required"/></td></tr><tr>
+                         <input type="text" name="typeofservices" id="name"  value="<%=s.getTypeofservices()%>"  placeholder="Perticulars" required="required"/></td></tr><tr>
                           </div>
                         
                              
+                          <input type="hidden" value="<%=s.getSid()%>" name="sid">
                              
                             
                        <div class="item form-group">
-                                <input type="submit" name="s"  value="Add City" class="buttonsubmit button4"/>
+                                <input type="submit" name="s"  value="Add" class="buttonsubmit button4"/>
                        </div>
                          
 
@@ -110,67 +118,6 @@ return xmlHttp;
 
             </div>
 
-            <div id="view" class="tabcontent">
-
-                <%
-                    try {
-                      
-                        
-
-
-
-
-ArrayList<CityPojo> al=CityDao.GetAllCity();
-CityPojo d= new CityPojo();
-Iterator ir=al.iterator();
-
-
-
-
-
-
-
-
-                %>
-                <table class="tftable" id="tblData3" border="1">
-                      <input type="text" name="search" id="searchbox" placeholder="Search..">
-                   
-                    <tr><th>City ID</th>
-                        <th>City </th>
-                        <th>Update</th>
-                        <th>Delete</th>
-                 <!--      
-                        <th>Update </th>
-                        <th>Delete</th>
--->
-
-                    </tr>    
-                    <%
-                        while (ir.hasNext()) {
-                            d=(CityPojo)ir.next();
-                           
-                    %>
-                    <tr>
-                        <td align="center"><%=d.getCityid()%></td>
-                        <td align="center"><%=d.getCity()%></td>
-                    
-                        <td align="center"><a href='UpdateCity.jsp?cityid=<%=d.getCityid()%>'>Update</a></td>
-                        <td align="center"><a href='DeleteCity.jsp?cityid=<%=d.getCityid()%>'>Delete</a></td>
-
-
-                    </tr>          
-                    <%
-                        }
-                    %>
-
-                </table>
-                <%
-                    } catch (Exception e) {
-                        out.println("Error is" + e);
-                    }
-
-                %>
-            </div>
 
             <div id="search" class="tabcontent">
                 <h3>Search Branch By Name/Contact/Email/Taluka/District/Address</h3>

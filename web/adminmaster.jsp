@@ -81,18 +81,18 @@
                     }
                 %>
                 <ul class='nav'>
-                    
-                      <li>
 
-                          <a href='City.jsp'>City</a>
+                    <li>
+
+                        <a href='City.jsp'>City</a>
                     </li>
-                     <li>
+                    <li>
 
-                         <a href='Distict.jsp'>District</a>
+                        <a href='Distict.jsp'>District</a>
                     </li>
-                      <li>
+                    <li>
 
-                          <a href='Village.jsp'>Village</a>
+                        <a href='Village.jsp'>Village</a>
                     </li>
                     <li>
 
@@ -107,9 +107,9 @@
                     <li>
                         <a  href="Auctions.jsp">Auction Master</a>
                     </li>
-                    
-                      <li>
-                          <a  href="AddShareHolder.jsp">Share Holder</a>
+
+                    <li>
+                        <a  href="AddShareHolder.jsp">Share Holder</a>
                     </li>
                     <li>
                         <a href="EventMaster.jsp">Events Master</a>
@@ -129,23 +129,29 @@
                     </li>
 
 
-
+                    <li>
+                        <a href="ContactUSView.jsp">View Contact Us</a>
+                    </li>
                     <li>
                         <a href="adminpasswordUpdate.jsp">Password Update</a>
                     </li>
                     <li>
                         <a href="AdminUsernameUpdate.jsp">Username Update</a>
                     </li>
-
-
                     <li>
-                        <a>Upload Share Holder</a>
+                        <a href="GallaryAdd.jsp">Gallary Master</a>
                     </li>
                     <li>
-                        <a>Assets</a>
+                        <a href="ServicesCharges.jsp">Services Charges</a>
                     </li>
                     <li>
-                        <a>Settings</a>
+                        <a href="Charges.jsp">Charges</a>
+                    </li>
+                    <li>
+                        <a href="LoanProposalAmount.jsp">LPA</a>
+                    </li>
+                      <li>
+                          <a href="SocialActivity.jsp">Social Activity</a>
                     </li>
                     <li>
                         <a href="Logout.jsp">Logout</a>

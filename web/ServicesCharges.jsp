@@ -10,6 +10,7 @@
         <jsp:useBean id="CityDao" class="ssucb.dao.CityDao"></jsp:useBean>
         
         
+        <jsp:useBean id="s" class="ssucb.dao.ServiceChargesDao"></jsp:useBean>
         <script>
             function showBankDetail(str) {
                 var xhttp;    
@@ -82,25 +83,26 @@ return xmlHttp;
             <a class='button'></a>
 
             <div class="tab">
-                <button class="tablinks" onclick="openCity(event, 'addbranch')">Add New City</button>
-                <button class="tablinks" onclick="openCity(event, 'view')">View City</button>
+                <button class="tablinks" onclick="openCity(event, 'addbranch')">Service Charges</button>
+                <button class="tablinks" onclick="openCity(event, 'view')">View Service Charges</button>
                <!-- <button class="tablinks" onclick="openCity(event, 'search')">Search Branches</button>-->
             </div>
 
             <div id="addbranch" class="tabcontent">
-                <h3>Add City</h3>
+              
                 <br><br>
                     
-                    <form  action="Addcity.jsp" class="form-horizontal form-label-left" method="POST" novalidate>
+                    <form  action="AddServiceCharges.jsp" class="form-horizontal form-label-left" method="POST" novalidate>
                           <div class="item form-group">
-                         <input type="text" name="city" id="name" data-validate-length-range="4" data-validate-words="1" value=""  placeholder="Add City" required="required"/></td></tr><tr>
+                         <input type="text" name="typeofservices" id="name"  value=""  placeholder="Perticulars" required="required"/></td></tr><tr>
                           </div>
                         
                              
+                        
                              
                             
                        <div class="item form-group">
-                                <input type="submit" name="s"  value="Add City" class="buttonsubmit button4"/>
+                                <input type="submit" name="s"  value="Add" class="buttonsubmit button4"/>
                        </div>
                          
 
@@ -114,29 +116,12 @@ return xmlHttp;
 
                 <%
                     try {
-                      
-                        
-
-
-
-
-ArrayList<CityPojo> al=CityDao.GetAllCity();
-CityPojo d= new CityPojo();
-Iterator ir=al.iterator();
-
-
-
-
-
-
-
-
-                %>
+                  %>
                 <table class="tftable" id="tblData3" border="1">
                       <input type="text" name="search" id="searchbox" placeholder="Search..">
                    
-                    <tr><th>City ID</th>
-                        <th>City </th>
+                    <tr><th> ID</th>
+                        <th>Service Type </th>
                         <th>Update</th>
                         <th>Delete</th>
                  <!--      
@@ -146,16 +131,19 @@ Iterator ir=al.iterator();
 
                     </tr>    
                     <%
-                        while (ir.hasNext()) {
-                            d=(CityPojo)ir.next();
+                        
+                        java.sql.ResultSet rs= s.getAllServiceCharges();
+                        int count=0;
+                        while (rs.next()) {
+                          count++;
                            
                     %>
                     <tr>
-                        <td align="center"><%=d.getCityid()%></td>
-                        <td align="center"><%=d.getCity()%></td>
+                        <td align="center"><%=count%></td>
+                        <td align="center"><%=rs.getString(2)%></td>
                     
-                        <td align="center"><a href='UpdateCity.jsp?cityid=<%=d.getCityid()%>'>Update</a></td>
-                        <td align="center"><a href='DeleteCity.jsp?cityid=<%=d.getCityid()%>'>Delete</a></td>
+                        <td align="center"><a href='UpdateServiceCharges.jsp?sid=<%=rs.getInt(1)%>'>Update</a></td>
+                        <td align="center"><a href='DeleteServiceCharges.jsp?sid=<%=rs.getInt(1)%>'>Delete</a></td>
 
 
                     </tr>          

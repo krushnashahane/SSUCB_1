@@ -110,7 +110,7 @@
 
                                 <figure class="icon">
                                     <!--<i class="fa fa-university fa-3x"></i> -->
-                                    <img src="Main/img/icon2/Deposit-Money-Icon.png"  />
+                                    <a href="Deposit.jsp"><img src="Main/img/icon2/Deposit-Money-Icon.png"  /></a>
                                 </figure>
                                 <h3 style="font-size:18px;">Deposit</h3>
                             </div>
@@ -120,7 +120,7 @@
 
                                 <figure class="icon">
                                     <!-- <i class="glyphicon glyphicon-send fa-3x"></i>   -->
-                                    <img src="Main/img/icon2/fixdeposit3.jpg"  />
+                                    <a href="Depositinterest.jsp"><img src="Main/img/icon2/fixdeposit3.jpg"  /></a>
                                 </figure>
                                 <h3 style="font-size:18px;">Fixed Deposit </h3>
                             </div>
@@ -130,7 +130,7 @@
 
                                 <figure class="icon">
                                     <!--	<i class="fa fa-group fa-3x"></i>  -->
-                                    <img src="Main/img/icon2/savings1.jpg"  />
+                                    <a href="Depositinterest.jsp"><img src="Main/img/icon2/savings1.jpg"  /></a>
                                 </figure>
                                 <h3 style="font-size:18px;">Savings Deposit </h3>
                             </div>
@@ -140,7 +140,7 @@
 
                                 <figure class="icon">
                                     <!-- <i class="fa fa-user fa-3x"></i>  -->  
-                                    <img src="Main/img/icon2/recurring0.png"  />
+                                    <a href="Depositinterest.jsp"> <img src="Main/img/icon2/recurring0.png"  /></a>
                                 </figure>
                                 <h3 style="font-size:18px;">Recurring Deposit </h3>
                             </div>
@@ -154,7 +154,7 @@
 
                                 <figure class="icon">
                                     <!--<i class="fa fa-university fa-3x"></i> -->
-                                    <img src="Main/img/icon2/commercial.png"  />
+                                    <a href="LoanInterest.jsp">  <img src="Main/img/icon2/commercial.png"  /></a>
                                 </figure>
                                 <h3 style="font-size:18px;">Commercial Loan</h3>
                             </div>
@@ -164,7 +164,7 @@
 
                                 <figure class="icon">
                                     <!-- <i class="glyphicon glyphicon-send fa-3x"></i>   -->
-                                    <img src="Main/img/icon2/vehicle.png"  />
+                                    <a href="LoanInterest.jsp">  <img src="Main/img/icon2/vehicle.png"  /></a>
                                 </figure>
                                 <h3 style="font-size:18px;">Vehicle Loan </h3>
                             </div>
@@ -174,7 +174,7 @@
 
                                 <figure class="icon">
                                     <!--	<i class="fa fa-group fa-3x"></i>  -->
-                                    <img src="Main/img/icon2/Goldloan.png"  />
+                                    <a href="LoanInterest.jsp"> <img src="Main/img/icon2/Goldloan.png"  /></a>
                                 </figure>
                                 <h3 style="font-size:18px;">Gold Loan </h3>
                             </div>
@@ -184,7 +184,7 @@
 
                                 <figure class="icon">
                                     <!-- <i class="fa fa-user fa-3x"></i>  -->  
-                                    <img src="Main/img/icon2/home.png"  />
+                                    <a href="LoanInterest.jsp">  <img src="Main/img/icon2/home.png"  /></a>
                                 </figure>
                                 <h3 style="font-size:18px;">Home Loan </h3>
                             </div>
@@ -400,8 +400,9 @@
                                     <figure class="icon">
                                         <i class="fa fa-university fa-3x"></i>
                                     </figure>
+
                                     <h4>Since 1965</h4>
-                                </div>
+                                </div></a>
                             </div>
                             <div class="col-md-3 wel-grid btm-gre text-center wow flipInY" data-wow-duration="1.5s" data-wow-delay="0.1s">
                                 <div class="btm-clr4 btm-clr1">

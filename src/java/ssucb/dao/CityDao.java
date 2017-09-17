@@ -5,6 +5,7 @@
  */
 package ssucb.dao;
 
+import java.sql.ResultSet;
 import java.util.*;
 import ssucb.dao.DBDAO;
 import ssucb.pojo.CityPojo;
@@ -48,5 +49,36 @@ public class CityDao extends ConnectionInitializer {
    return al;
     }
     
+    public ResultSet GetCityByid(int cid) throws Exception{
+    stmt=conn.prepareStatement("select * from city where cityid=?");
+    stmt.setInt(1,cid);
+    rs=stmt.executeQuery();
+    return rs;
     
+    }
+    
+    public boolean UpdateCity(CityPojo c) throws Exception{
+    stmt=conn.prepareStatement("update city set city=? where cityid=?");
+    stmt.setString(1,c.getCity());
+    stmt.setInt(2,c.getCityid());
+    int value=stmt.executeUpdate();
+    if(value>0){
+    return true;
+    }else{
+    return false;
+    }
+    
+    }
+    
+    public boolean DeleteCity( int cityid) throws Exception{
+    
+    stmt=conn.prepareStatement("delete from city where cityid=?");
+    stmt.setInt(1, cityid);
+    int value=stmt.executeUpdate();
+    if(value>0){
+    return true;
+    }else{
+    return false;
+    }
+    }
 }

@@ -7,7 +7,7 @@ package ssucb.dao;
 
 import java.util.*;
 import ssucb.pojo.DistictPojo;
-
+import java.sql.*;
 /**
  *
  * @author Naresh
@@ -88,4 +88,37 @@ public class DistictDao extends ConnectionInitializer {
         }
         return al;
     }
+     
+     public boolean UpdateDistict(DistictPojo d) throws Exception{
+     stmt=conn.prepareStatement("update distict set distict=?,cityid=? where did=?");
+     stmt.setString(1,d.getDistictname());
+     stmt.setInt(2, d.getCityid());
+     stmt.setInt(3, d.getDid());
+     int value=stmt.executeUpdate();
+     if(value>0){
+     return true;
+     }else{
+     return false;
+     }
+     }
+     public boolean DeleteDistict(int did) throws Exception{
+     stmt=conn.prepareStatement("delete from distict where did=?");
+     stmt.setInt(1, did);
+     int value=stmt.executeUpdate();
+     if(value>0){
+     return true;
+     }else{
+     return false;
+     }
+     }
+     
+     
+     
+     
+     public ResultSet getAllDistictbydid(int did) throws Exception{
+     stmt=conn.prepareStatement("select * from distict where did=?");
+     stmt.setInt(1,did);
+     rs=stmt.executeQuery();
+     return rs;
+     }
 }

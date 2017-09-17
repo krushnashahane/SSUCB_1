@@ -62,6 +62,11 @@ return xmlHttp;
 </script>
     </head>
     <body>
+        <%!
+        
+        String City;
+        int cityid;
+        %>
         <jsp:include page="adminmaster.jsp"/>
         <%!        String username;
         %>
@@ -72,18 +77,27 @@ return xmlHttp;
                 response.sendRedirect("adminlogin.jsp");
                 
                 }
+                
+                 cityid=Integer.parseInt(request.getParameter("cityid").toString());
+                java.sql.ResultSet rs=CityDao.GetCityByid(cityid);
+                while(rs.next()){
+                City=rs.getString(2);
+                }
+                
+                
             } catch (Exception e) {
 
                 response.sendRedirect("adminlogin.jsp");
             }
         %>
+        
         <br>
         <div class='content isOpen'>
             <a class='button'></a>
 
             <div class="tab">
                 <button class="tablinks" onclick="openCity(event, 'addbranch')">Add New City</button>
-                <button class="tablinks" onclick="openCity(event, 'view')">View City</button>
+              
                <!-- <button class="tablinks" onclick="openCity(event, 'search')">Search Branches</button>-->
             </div>
 
@@ -91,13 +105,14 @@ return xmlHttp;
                 <h3>Add City</h3>
                 <br><br>
                     
-                    <form  action="Addcity.jsp" class="form-horizontal form-label-left" method="POST" novalidate>
-                          <div class="item form-group">
-                         <input type="text" name="city" id="name" data-validate-length-range="4" data-validate-words="1" value=""  placeholder="Add City" required="required"/></td></tr><tr>
+                    <form  action="CityUpdate.jsp" class="form-horizontal form-label-left" method="POST" novalidate>
+                          
+                        <div class="item form-group">
+                         <input type="text" name="city" id="name" value="<%=City%>" data-validate-length-range="4" data-validate-words="1" value=""  placeholder="Add City" required="required"/></td></tr><tr>
                           </div>
                         
                              
-                             
+                        <input type="hidden" name="cityid" value="<%=cityid%>">     
                             
                        <div class="item form-group">
                                 <input type="submit" name="s"  value="Add City" class="buttonsubmit button4"/>
@@ -110,67 +125,7 @@ return xmlHttp;
 
             </div>
 
-            <div id="view" class="tabcontent">
-
-                <%
-                    try {
-                      
-                        
-
-
-
-
-ArrayList<CityPojo> al=CityDao.GetAllCity();
-CityPojo d= new CityPojo();
-Iterator ir=al.iterator();
-
-
-
-
-
-
-
-
-                %>
-                <table class="tftable" id="tblData3" border="1">
-                      <input type="text" name="search" id="searchbox" placeholder="Search..">
-                   
-                    <tr><th>City ID</th>
-                        <th>City </th>
-                        <th>Update</th>
-                        <th>Delete</th>
-                 <!--      
-                        <th>Update </th>
-                        <th>Delete</th>
--->
-
-                    </tr>    
-                    <%
-                        while (ir.hasNext()) {
-                            d=(CityPojo)ir.next();
-                           
-                    %>
-                    <tr>
-                        <td align="center"><%=d.getCityid()%></td>
-                        <td align="center"><%=d.getCity()%></td>
-                    
-                        <td align="center"><a href='UpdateCity.jsp?cityid=<%=d.getCityid()%>'>Update</a></td>
-                        <td align="center"><a href='DeleteCity.jsp?cityid=<%=d.getCityid()%>'>Delete</a></td>
-
-
-                    </tr>          
-                    <%
-                        }
-                    %>
-
-                </table>
-                <%
-                    } catch (Exception e) {
-                        out.println("Error is" + e);
-                    }
-
-                %>
-            </div>
+          
 
             <div id="search" class="tabcontent">
                 <h3>Search Branch By Name/Contact/Email/Taluka/District/Address</h3>

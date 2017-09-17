@@ -115,7 +115,7 @@
                                 <!-- <i class="fa fa-university"></i>  -->
                                 <img src="Main/img/icons/logo.png" class="img-responsive" width="90" height="80" />
                             </div>
-                            <a href="index.html" style="color:#b3111d;"><br>
+                            <a href="index.jsp" style="color:#b3111d;"><br>
                                 Sundarlal Sawji Urban Co-op Bank Ltd, Jintur
 
                             </a>
@@ -131,7 +131,7 @@
 
                                 <p><b>Online Banking</b></p>
                                 <span>
-                                    <a href="https://ib.sundarlalsawjibank.com/login.do">Login</a>
+                                    <a href="https://ib.sundarlalsawjibank.com/login.do" target="_blank">Login</a>
                                 </span>
                             </div>
                             <!--    <div class="form-theme">
@@ -330,12 +330,18 @@
                                                             </a>
                                                         </li>
                                                         
-                                                             <li class="">
-                                                                 <a href="customerregister.jsp" >
-                                                                New Account
+                                                        <li class="dropdown">
+                                                            <a href=""  class="dropdown-toggle"  data-toggle="dropdown">
+                                                                Apply Online <b class="caret"></b>
                                                             </a>
+                                                            <ul class="dropdown-menu">
+                                                                <li><a href="customerregister.jsp"> New Saving Account</a></li>
+                                                                <li><a href="AtmCardApply.jsp"> ATM Application</a></li>
+                                                                <li><a href="ApplyForInternet.jsp"> Internet Banking</a></li>
+                                                                <li><a href="ApplyforsmsALert.jsp"> SMS Alert</a></li>
+                                                            </ul>
                                                         </li>
-                                                        
+                                                          
                                                         <li class="">
                                                             <a href="existingcustomerlogin.jsp" >
                                                                 Login

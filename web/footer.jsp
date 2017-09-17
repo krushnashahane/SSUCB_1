@@ -11,20 +11,20 @@
                                 <h4 style="color:#dadbdd">Contact us</h4>
                                 <ul class="contact-footer">
                                     <li>
-                                        <i class="fa fa-envelope"></i> <a href="#">ssucb.admin@gmail.com</a>
+                                        <i class="fa fa-envelope"></i> <a>ssucb.admin@gmail.com</a>
                                     </li>
                                     <li>
-                                        <i class="fa fa-headphones"></i> <a href="#">02457-237149 / 237330</a>
+                                        <i class="fa fa-headphones"></i> <a>02457-237149 / 237330</a>
                                      </li>
                                     <li class="location">
-                                        <i class="fa fa-home"></i> <a href="#"> APMC Market, Jintur Dist: Parbhani</a>
+                                        <i class="fa fa-home"></i> <a> APMC Market Yard, Jintur Dist: Parbhani</a>
                                     </li>                                   
                                 </ul>
                                 <div class="logo-footer">
                                     <div class="icon-logo">
                                         <i class="fa fa-university"></i>
                                     </div>
-                                    <a href="index.html">
+                                    <a href="index.jsp">
                                         SSUC Bank
                                         <span>Your money is safe.</span>
                                     </a>
@@ -52,15 +52,15 @@
                             <div class="border-right txt-right">
                                 <h4 style="color:#dadbdd">Newsletter</h4>
                                 <p style="color:#a8a39e;" >Please enter your e-mail and subscribe to our newsletter.</p>
-                                <form id="newsletterForm" class="newsletterForm" action="http://html.iwthemes.com/coopbank/php/mailchip/newsletter-subscribe.php">
+                                <form id="newsletterForm" class="newsletterForm" action="">
                                     <div class="input-group">
-                                        <span class="input-group-addon">
+                                       <!-- <span class="input-group-addon">
                                             <i class="fa fa-envelope"></i>
                                         </span>
                                         <input class="form-control" placeholder="Email Address" name="email"  type="email" required="required">
                                         <span class="input-group-btn">
                                             <button class="btn btn-primary" type="submit" name="subscribe" >Go!</button>
-                                        </span>
+                                        </span>-->
                                     </div>
                                 </form>   
                                 <div id="result-newsletter"></div>    
@@ -73,10 +73,10 @@
                             <div class="border-right txt-right">
                               <h4 style="color:#dadbdd">Follow Us On</h4>
                               <ul class="social">
-                                  <li class="facebook"><span><i class="fa fa-facebook"></i></span><a href="#">Facebook</a></li>
-                                  <li class="twitter"><span><i class="fa fa-twitter"></i></span><a href="#">Twitter</a></li>
-                                 <li class="github"><span><i class="fa fa-google-plus"></i></span><a href="#">Google +</a></li>
-                                  <li class="linkedin"><span><i class="fa fa-linkedin"></i></span><a href="#">Linkedin</a></li>
+                                  <li class="facebook"><span><i class="fa fa-facebook"></i></span><a href="https://www.facebook.com/sundarlal.sawjibank.5" target="_blank">Facebook</a></li>
+                                  <li class="twitter"><span><i class="fa fa-twitter"></i></span><a href="https://twitter.com/SundarlalSawji" target="_blank">Twitter</a></li>
+                                  <li class="github"><span><i class="fa fa-google-plus"></i></span><a href="https://plus.google.com/u/0/113866258339230293366" target="_blank">Google +</a></li>
+                                  <li class="linkedin"><span><i class="fa fa-linkedin"></i></span><a href="https://www.linkedin.com/in/sundarlal-sawji-urban-co-op-bank-154a7b141/" target="_blank">Linkedin</a></li>
                               </ul>
                             </div>
                         </div>

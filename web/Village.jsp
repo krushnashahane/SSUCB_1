@@ -189,10 +189,10 @@ Iterator ir=al.iterator();
                         <td align="center"><%=v.getVillage()%></td>
                        <td align="center"><%=v.getDistict()%></td>
                        
-                       <!--
-                        <td align="center"><a href='branchupdatedetail.jsp?bid='>Update</a></td>
-                        <td align="center"><a href='branchdelete.jsp?branchid='>Delete</a></td>
--->
+                       
+                        <td align="center"><a href='VillageUpdate.jsp?villageid=<%=v.getVillageid()%>'>Update</a></td>
+                        <td align="center"><a href='DeleteVillage.jsp?villageid=<%=v.getVillageid()%>'>Delete</a></td>
+
 
                     </tr>          
                     <%

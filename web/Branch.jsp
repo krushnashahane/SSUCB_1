@@ -65,7 +65,7 @@
                 <table id="tableData" class="table table-bordered" style="font-size:16px;margin-left:65px;margin-top:30px;width:90%; ">
                     <thead style="font-size:16px;background-color:#49b7fb; ">
                         <tr>
-                            <th class="" style="font-size:16px;  " >City   </th>
+                            <th class="" style="font-size:16px;  " >Town   </th>
                             <th class="" style="font-size:16px; " >Branch </th>
                             <th class="" style="font-size:16px; " >Address</th>
                             <th class="" style="font-size:16px; " >Phone Number</th>
@@ -88,7 +88,7 @@ while(rs.next()){
                         <tr>
                             <td>
 
-                           <%=rs.getString(10)%>
+                           <%=rs.getString(9)%>
                             </td>
                             <td> <%=rs.getString(2)%>	</td>
                             <td ><%=rs.getString(8)%><br> <%=rs.getString(9)%> Dist. <%=rs.getString(10)%> <br>

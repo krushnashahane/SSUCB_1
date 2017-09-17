@@ -6,6 +6,7 @@
 package ssucb.dao;
 import java.util.*;
 import ssucb.pojo.Village;
+import java.sql.*;
 /**
  *
  * @author Naresh
@@ -86,9 +87,42 @@ public class VillageDao extends  ConnectionInitializer{
     return al;
     }
      
+   
+     
+     public ResultSet getVillegebyvillegeID(int vid) throws Exception{
+     stmt=conn.prepareStatement("select * from villege whee villageid=?");
+     stmt.setInt(1,vid);
+     rs=stmt.executeQuery();
+     return rs;
+     }
      
      
+     public boolean UpdateVillage(Village v) throws Exception{
+     stmt=conn.prepareStatement("update village set village=?,distict=? where villageid=?");
+     stmt.setString(1,v.getVillage());
+     stmt.setInt(2,v.getDistictid());
+     stmt.setInt(3, v.getVillageid());
+     int value=stmt.executeUpdate();
+     if(value>0){
+     return true;
+     }else{
+     return false;
+     }
+     }
      
+     public boolean DeleteVillage(int villageid) throws Exception{
+     stmt=conn.prepareStatement("delete from village where villageid=?");
+     stmt.setInt(1,villageid);
      
+     int value=stmt.executeUpdate();
+     if(value>0)
+     {
+     
+     return true;
+     }else{
+     
+     return false;
+     }     
+     }
      
 }
