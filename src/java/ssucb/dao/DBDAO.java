@@ -24,7 +24,7 @@ public class DBDAO {
     private DBDAO() throws Exception {
         com.mysql.jdbc.Driver d = new com.mysql.jdbc.Driver();
         DriverManager.registerDriver(d);
-      //conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/sundarla_ssucb", "sundarla_ssucb", "ssucb@543210");
+    //  conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/sundarla_ssucb", "sundarla_ssucb", "ssucb@543210");
    
   conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ssucb", "root", "root");
     }

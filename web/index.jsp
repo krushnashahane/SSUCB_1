@@ -10,14 +10,14 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <jsp:include page="MenuHeader.jsp"></jsp:include>
-        <link href="Main/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-        <link href="Main/css/style_2.css" rel="stylesheet" type="text/css" media="all" />
-        <link href="Main/css/bankBanner.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="Main/new/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="Main/new/css/style_2.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="Main/new/css/bankBanner.css" rel="stylesheet" type="text/css" media="all" />
 
         <!-- gif -->
         <!-- <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">  -->
         <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
-        <link href="Main/css/gif.css" rel='stylesheet' type='text/css' />
+        <link href="Main/new/css/gif.css" rel='stylesheet' type='text/css' />
 
 
 
@@ -78,130 +78,127 @@
 
 
 
-        <div class="container-fluid" style="background-image:url('Main/img/newbackground.jpg')">
-            <div class="row">
-                <!-- new banner -->
+        <!-- End Nav-->
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <!-- new banner -->
+                                        <div class="">
+                                            <figure id="slideshow">
+                                                <img  width="1800px" height="400" src="Main/new/img/slide/slide1.png" alt="...">
 
-                <div id="view" style="width:350px; height:350px; margin:80px auto 0 auto;">
-                    <div id="box">
-                        <div class="one"><img src="Main/img/banner1.png"></div>
-                        <div class="two"><img src="Main/img/logo.png"></div>
-                        <div class="three"><img src="Main/img/banner1.png"></div>
-                        <div class="four"><img src="Main/img/logo.png"></div>
-                        <div class="five"><img src="Main/img/banner1.png"></div>
-                        <div class="six"><img src="Main/img/logo.png"></div>
-                    </div>
-                </div>
+                                                <img width="1800px" height="400" src="Main/new/img/slide/slide2.png" alt="...">
 
-            </div>
-        </div> 
+                                                <img width="1800px" height="400"  src="Main/new/img/slide/slide3.png" alt="...">
+                                            </figure>
+                                        </div>
+                                    </div>
+                                </div>
 
         <jsp:include page="indexSlideMenu.jsp"></jsp:include>
 
         <!-- Col boxes-services -->
-        <section class="col-sm-9 ">
-            <!-- boxes-services -->
+         <!-- Col boxes-services -->
+                                        <section class="col-sm-9 ">
+                                            <!-- boxes-services -->
 
-            <div class="content">
-                <div class="">					
-                    <div class="content-grids ">
-                        <div class="col-sm-3  wel-grid text-center wow flipInY" data-wow-duration="1.5s" data-wow-delay="0.1s">
-                            <div class="btm-clr4">
+                                            <div class="content">
+                                                <div class="">					
+                                                    <div class="content-grids ">
+                                                        <div class="col-sm-3  wel-grid text-center wow flipInY" data-wow-duration="1.5s" data-wow-delay="0.1s">
+                                                            <div class="btm-clr4">
 
-                                <figure class="icon">
-                                    <!--<i class="fa fa-university fa-3x"></i> -->
-                                    <a href="Deposit.jsp"><img src="Main/img/icon2/Deposit-Money-Icon.png"  /></a>
-                                </figure>
-                                <h3 style="font-size:18px;">Deposit</h3>
-                            </div>
-                        </div>
-                        <div class="col-sm-3 wel-grid btm-gre text-center wow flipInY" data-wow-duration="1.5s" data-wow-delay="0.1s">
-                            <div class="btm-clr4 btm-clr1">
+                                                                <figure class="icon">
+                                                                    <!--<i class="fa fa-university fa-3x"></i> -->
+                                                                    <img src="Main/new/img/icon2/deposit_new2.png"/>
+                                                                </figure>
+                                                                <h3 style="font-size:18px;">Deposit</h3>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-3 wel-grid btm-gre text-center wow flipInY" data-wow-duration="1.5s" data-wow-delay="0.1s">
+                                                            <div class="btm-clr4 btm-clr1">
 
-                                <figure class="icon">
-                                    <!-- <i class="glyphicon glyphicon-send fa-3x"></i>   -->
-                                    <a href="Depositinterest.jsp"><img src="Main/img/icon2/fixdeposit3.jpg"  /></a>
-                                </figure>
-                                <h3 style="font-size:18px;">Fixed Deposit </h3>
-                            </div>
-                        </div>
-                        <div class="col-sm-3 wel-grid text-center wow flipInY" data-wow-duration="1.5s" data-wow-delay="0.1s">
-                            <div class="btm-clr4 btm-clr1">
+                                                                <figure class="icon">
+                                                                    <!-- <i class="glyphicon glyphicon-send fa-3x"></i>   -->
+                                                                    <img src="Main/new/img/icon2/fixdeposit_2.png"  />
+                                                                </figure>
+                                                                <h3 style="font-size:18px;">Fixed Deposit </h3>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-3 wel-grid text-center wow flipInY" data-wow-duration="1.5s" data-wow-delay="0.1s">
+                                                            <div class="btm-clr4 btm-clr1">
 
-                                <figure class="icon">
-                                    <!--	<i class="fa fa-group fa-3x"></i>  -->
-                                    <a href="Depositinterest.jsp"><img src="Main/img/icon2/savings1.jpg"  /></a>
-                                </figure>
-                                <h3 style="font-size:18px;">Savings Deposit </h3>
-                            </div>
-                        </div>
-                        <div class="col-sm-3 wel-grid btm-gre text-center wow flipInY" data-wow-duration="1.5s" data-wow-delay="0.1s">
-                            <div class="btm-clr btm-clr3">
+                                                                <figure class="icon">
+                                                                    <!--	<i class="fa fa-group fa-3x"></i>  -->
+                                                                    <img src="Main/new/img/icon2/savings1.png"  />
+                                                                </figure>
+                                                                <h3 style="font-size:18px;">Savings Deposit </h3>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-3 wel-grid btm-gre text-center wow flipInY" data-wow-duration="1.5s" data-wow-delay="0.1s">
+                                                            <div class="btm-clr btm-clr3">
 
-                                <figure class="icon">
-                                    <!-- <i class="fa fa-user fa-3x"></i>  -->  
-                                    <a href="Depositinterest.jsp"> <img src="Main/img/icon2/recurring0.png"  /></a>
-                                </figure>
-                                <h3 style="font-size:18px;">Recurring Deposit </h3>
-                            </div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
+                                                                <figure class="icon">
+                                                                    <!-- <i class="fa fa-user fa-3x"></i>  -->  
+                                                                    <img src="Main/new/img/icon2/recurring.png"  />
+                                                                </figure>
+                                                                <h3 style="font-size:18px;">Recurring Deposit </h3>
+                                                            </div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                    </div>
 
-                    <div class="content-grids ">
-                        <div class="col-sm-3 wel-grid text-center wow flipInY" data-wow-duration="1.5s" data-wow-delay="0.1s">
-                            <div class="btm-clr4">
+                                                    <div class="content-grids ">
+                                                        <div class="col-sm-3 wel-grid text-center wow flipInY" data-wow-duration="1.5s" data-wow-delay="0.1s">
+                                                            <div class="btm-clr4">
 
-                                <figure class="icon">
-                                    <!--<i class="fa fa-university fa-3x"></i> -->
-                                    <a href="LoanInterest.jsp">  <img src="Main/img/icon2/commercial.png"  /></a>
-                                </figure>
-                                <h3 style="font-size:18px;">Commercial Loan</h3>
-                            </div>
-                        </div>
-                        <div class="col-sm-3 wel-grid btm-gre text-center wow flipInY" data-wow-duration="1.5s" data-wow-delay="0.1s">
-                            <div class="btm-clr4 btm-clr1">
+                                                                <figure class="icon">
+                                                                    <!--<i class="fa fa-university fa-3x"></i> -->
+                                                                    <img src="Main/new/img/icon2/commercial.png"  />
+                                                                </figure>
+                                                                <h3 style="font-size:18px;">Commercial Loan</h3>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-3 wel-grid btm-gre text-center wow flipInY" data-wow-duration="1.5s" data-wow-delay="0.1s">
+                                                            <div class="btm-clr4 btm-clr1">
 
-                                <figure class="icon">
-                                    <!-- <i class="glyphicon glyphicon-send fa-3x"></i>   -->
-                                    <a href="LoanInterest.jsp">  <img src="Main/img/icon2/vehicle.png"  /></a>
-                                </figure>
-                                <h3 style="font-size:18px;">Vehicle Loan </h3>
-                            </div>
-                        </div>
-                        <div class="col-sm-3 wel-grid text-center wow flipInY" data-wow-duration="1.5s" data-wow-delay="0.1s">
-                            <div class="btm-clr4 btm-clr1">
+                                                                <figure class="icon">
+                                                                    <!-- <i class="glyphicon glyphicon-send fa-3x"></i>   -->
+                                                                    <img src="Main/new/img/icon2/vehicle_loan2.png"  />
+                                                                </figure>
+                                                                <h3 style="font-size:18px;">Vehicle Loan </h3>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-3 wel-grid text-center wow flipInY" data-wow-duration="1.5s" data-wow-delay="0.1s">
+                                                            <div class="btm-clr4 btm-clr1">
 
-                                <figure class="icon">
-                                    <!--	<i class="fa fa-group fa-3x"></i>  -->
-                                    <a href="LoanInterest.jsp"> <img src="Main/img/icon2/Goldloan.png"  /></a>
-                                </figure>
-                                <h3 style="font-size:18px;">Gold Loan </h3>
-                            </div>
-                        </div>
-                        <div class="col-sm-3 wel-grid btm-gre text-center wow flipInY" data-wow-duration="1.5s" data-wow-delay="0.1s">
-                            <div class="btm-clr btm-clr3">
+                                                                <figure class="icon">
+                                                                    <!--	<i class="fa fa-group fa-3x"></i>  -->
+                                                                    <img src="Main/new/img/icon2/Goldloan_2.png"  />
+                                                                </figure>
+                                                                <h3 style="font-size:18px;">Gold Loan </h3>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-3 wel-grid btm-gre text-center wow flipInY" data-wow-duration="1.5s" data-wow-delay="0.1s">
+                                                            <div class="btm-clr btm-clr3">
 
-                                <figure class="icon">
-                                    <!-- <i class="fa fa-user fa-3x"></i>  -->  
-                                    <a href="LoanInterest.jsp">  <img src="Main/img/icon2/home.png"  /></a>
-                                </figure>
-                                <h3 style="font-size:18px;">Home Loan </h3>
-                            </div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>					
-
-
-
-                </div>
-            </div>
+                                                                <figure class="icon">
+                                                                    <!-- <i class="fa fa-user fa-3x"></i>  -->  
+                                                                    <img src="Main/new/img/icon2/homeloans_2.png"  />
+                                                                </figure>
+                                                                <h3 style="font-size:18px;">Home Loan </h3>
+                                                            </div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                    </div>					
 
 
-            <!-- End boxes-services -->
-        </section>
-        <!-- End Col boxes-services -->
 
+                                                </div>
+                                            </div>
+
+
+                                            <!-- End boxes-services -->
+                                        </section>
         <!--Aside - mini and full boxes -->
 
     </div>

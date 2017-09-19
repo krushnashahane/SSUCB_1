@@ -1,41 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en"> 
 
     <head><meta http-equiv="Content-Type" content="text/html; charset=euc-jp">
         <!-- Basic -->
 
-        <title>Sundarlal Sawji Urban Co-op Bank Ltd, Jintur </title>
-        <meta name="keywords" content="HTML5 Template" />
+        <title>Sundarlal Sawji Urban Co-op Bank Ltd, Jintur</title>
+        <meta name="keywords" content="SSUCB , JINTUR" />
         <meta name="description" content="CoopBank - Responsive HTML5 Template">
-        <meta name="author" content="iwthemes.com">  
+
 
         <!-- Mobile Metas -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Theme CSS -->
-        <link href="Main/css/style.css" rel="stylesheet" media="screen">
+        <link href="Main/new/css/style.css" rel="stylesheet" media="screen">
         <!-- Responsive CSS -->
-        <link href="Main/css/theme-responsive.css" rel="stylesheet" media="screen">
+        <link href="Main/new/css/theme-responsive.css" rel="stylesheet" media="screen">
         <!-- Skins Theme -->
         <link href="#" rel="stylesheet" media="screen" class="skin">
         <!-- Skins Theme -->
         <link href="#" rel="stylesheet" media="screen" class="mix-skin">
 
-
-        <link href="Main/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-        <link href="Main/css/style_2.css" rel="stylesheet" type="text/css" media="all" />
-
-        <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
-
         <!-- Favicons -->
-        <link rel="shortcut icon" href="Main/img/icons/favicon.ico">
-        <link rel="apple-touch-icon" href="img/icons/apple-touch-icon.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="Main/img/icons/apple-touch-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="Main/img/icons/apple-touch-icon-114x114.png">  
+        <link rel="shortcut icon" href="Main/new/img/icons/favicon.ico">
+
+
+        <link href="Main/new/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="Main/new/css/style_2.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="Main/new/css/bankBanner.css" rel="stylesheet" type="text/css" media="all" />
+
+        <!-- gif -->
+        <!-- <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">  -->
+        <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+        <link href="Main/new/css/gif.css" rel='stylesheet' type='text/css' />
+
+
+
+
+
+
 
         <!-- Head Libs -->
-        <script src="Main/js/libs/modernizr.js"></script>
-
+        <!--   <script src="js/libs/modernizr.js"></script>
+   
         <!--[if IE]>
             <link rel="stylesheet" href="css/ie/ie.css">
         <![endif]-->
@@ -45,87 +51,81 @@
             <script src="js/responsive/respond.js"></script>
         <![endif]-->
 
-        <style type="text/css">
-
-            .paging-nav {
-                text-align: right;
-                padding-top: 2px;
+        <!-- new banner -->
+        <style>
+            /* makes images responsive */
+            img {
+                max-width: 100%;
             }
 
-            .paging-nav a {
-                margin: auto 1px;
-                text-decoration: none;
-                display: inline-block;
-                padding: 1px 7px;
-                background: #91b9e6;
-                color: white;
-                border-radius: 3px;
+            /* takes care of clearing the floats */
+            #slideshow:after {
+                content: "";
+                display: table;
+                clear: both;
             }
 
-            .paging-nav .selected-page {
-                background: #187ed5;
-                font-weight: bold;
-            }
-
-            .paging-nav,
-            #tableData {
-                width: 100%;
-                margin: 0 auto;
-                margin-left:5%;
-                margin-top:2%;
-                font-family: Arial, sans-serif;
+            /* hides the images not being shown */
+            #slideshow img {
+                float: left;
+                margin: 0 -100% 0 0;
             }
         </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $('#slideshow img:gt(0)').hide();
+                setInterval(function () {
+                    $('#slideshow :first-child')
+                            .fadeOut(1000)
+                            .next('img')
+                            .fadeIn(1000)
+                            .end()
+                            .appendTo('#slideshow');
+                }, 4000);
+            });
+        </script>
 
+        <!-- new banner End -->
     </head>
     <body>
-
-        <div id="">
-            <div class="jquery-script-center">
-
-                <div class="jquery-script-clear"></div>
-            </div>
-        </div>
-
-
-
         <!--Preloader-->
         <div class="preloader">
             <div class="status">&nbsp;</div>
         </div>
         <!--End Preloader-->
 
-        <!-- Theme-options -->
 
-        <!-- End Theme-options -->   
+        <!-- End Theme-options -->  
 
         <!-- layout-->
-        <div id="layout" class="layout-semiboxed">
+        <div id="layout" class="">
             <!-- fond-header-->
-            <div id="fond-header" class="fond-header"></div>
+            <div id="fond-header" class="fond-header pattern-header-01"></div>
             <!-- End fond-header-->
 
             <!-- Header Area -->
             <header id="header">
                 <div class="row">
                     <!-- Logo Area -->
-                    <div class="col-md-8 col-lg-7">
+                    <div class="col-md-8 col-lg-8">
                         <div class="logo">
-                            <div class="icon-logo">
-                                <!-- <i class="fa fa-university"></i>  -->
-                                <img src="Main/img/icons/logo.png" class="img-responsive" width="90" height="80" />
-                            </div>
-                            <a href="index.jsp" style="color:#b3111d;"><br>
-                                Sundarlal Sawji Urban Co-op Bank Ltd, Jintur
+                            <!--  <div class="icon-logo">
+                            <!-- <i class="fa fa-university"></i>  -->
+                            <!--  <img src="img/icons/logo.png" class="?mg-responsive" width="90" height="80" />
+</div>
+<a href="index.html" style="color:#b3111d;"><br>
+   Sundarlal Sawji Urban Co-op Bank Ltd, Jintur
+  
+</a>   -->
+                            <img src="Main/new/img/icons/BannerLogo.png" class="?mg-responsive" width="850" height="90" /> 
 
-                            </a>
-                            <p>This Site is under Construction</p>
                         </div>
                     </div>
                     <!-- End Logo Area -->
 
                     <!-- Login Area -->
-                    <div class="col-md-4 col-lg-5"> <br>
+                    <div class="col-md-4 col-lg-4"> <br>
                         <div class="info-login">
                             <div class="head-info-login">
 
@@ -134,29 +134,8 @@
                                     <a href="https://ib.sundarlalsawjibank.com/login.do" target="_blank">Login</a>
                                 </span>
                             </div>
-                            <!--    <div class="form-theme">
-                                    <form action="">
-                            <!--  <div class="selector">
-                                    <select class="guests-input">
-                                        <option>Citizenship Card</option>
-                                        <option>Foreigners Card</option>
-                                        <option>Tax identification number</option>                    
-                                        <option>Identity Card</option>
-                                        <option>Username</option>
-                                    </select>
-                                   
-										   <span class="custom-select">User Name</span>  
-                                </div> -->
-                            <!--	   <input type="text" placeholder="User Name" class="input">
- <input type="text" placeholder="Password" class="input">
-<input type="submit" class="btn" value="Go">
-</form>
-</div> -->
-                            <!--       </div>
-                               </div>
-                            <!-- End Login Area -->
-                            <!-- </div>  -->
-                            </header>
+
+                            </header>  
                             <!-- End Header Area -->
 
                             <!-- content-central-->
@@ -178,7 +157,7 @@
                                                     <!-- Nav Bar Items -->
                                                     <ul class="nav navbar-nav">
                                                         <!-- Home Nav Items -->
-                                                        <li class="dropdown">
+                                                      <li class="dropdown">
                                                             <a href="index.jsp" >
                                                                 Home 
                                                             </a>
@@ -209,12 +188,12 @@
                                                             </a>
 
                                                         </li>
-                                                        <li class="">
+                                                        <!--<li class="">
                                                             <a href="Share_Holder.jsp" >
                                                                 ShareHolders 
                                                             </a>
 
-                                                        </li>
+                                                        </li>-->
                                                         <!-- End Company Nav Item -->
 
                                                         <li class="dropdown">
@@ -302,7 +281,7 @@
 
                                                         <!-- News Nav Item -->
                                                         <li class="dropdown">
-                                                            <a href="template-gallery-3.html"  class="dropdown-toggle"  data-toggle="dropdown">
+                                                            <a href=""  class="dropdown-toggle"  data-toggle="dropdown">
                                                                 Gallery <b class="caret"></b>
                                                             </a>
                                                             <ul class="dropdown-menu">
@@ -348,6 +327,8 @@
                                                             </a>
                                                         </li>
                                                         <!-- End Contact Us Nav Item -->
+
+                                                        <!-- End Contact Us Nav Item -->
                                                     </ul>
                                                     <!-- End Nav Bar Items -->
 
@@ -379,29 +360,45 @@
                                             </div>
                                         </div>
                                     </div>
-                                </nav>
+                                </nav>  
                                 <!-- End Nav-->
+                                
 
 
-                                <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
-                                <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-                                <script type="text/javascript" src="paging.js"></script> 
-                                <script type="text/javascript">
-                                    $(document).ready(function() {
-                                        $('#tableData').paging({limit:5});
-                                    });
-                                </script>
-                                <script type="text/javascript">
 
-                                    var _gaq = _gaq || [];
-                                    _gaq.push(['_setAccount', 'UA-36251023-1']);
-                                    _gaq.push(['_setDomainName', 'jqueryscript.net']);
-                                    _gaq.push(['_trackPageview']);
+                                <!-- <div class="container-fluid" style="background-image:url('img/newbackground.jpg')">
+                                         <div class="row">
+                                <!-- new banner -->
 
-                                    (function() {
-                                        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                                        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                                        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-                                    })();
+                                <!--  <div id="view" style="width:350px; height:350px; margin:80px auto 0 auto;">
+                                                                <div id="box">
+                                                                <div class="one"><img src="img/banner1.png"></div>
+                                                                <div class="two"><img src="img/logo.png"></div>
+                                                                <div class="three"><img src="img/banner1.png"></div>
+                                                                <div class="four"><img src="img/logo.png"></div>
+                                                                <div class="five"><img src="img/banner1.png"></div>
+                                                                <div class="six"><img src="img/logo.png"></div>
+                                                                </div>
+                                                                </div>
+                                
+                          </div>
+                        </div> -->
 
-                                </script>
+
+
+
+
+                                <!-- Info Content - Boxes Services-->
+
+                                <!--  <div class="content_info">
+                                  <div class="padding-top padding-bottom-mini"> -->
+                                <!-- Container Area - Boxes Services -->
+                               							
+
+
+
+
+                    <!--End Slider Function-->
+                    </body>
+
+                    </html>
